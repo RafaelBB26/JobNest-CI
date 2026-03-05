@@ -8,7 +8,7 @@ def test_connection_mac():
         print("Ejecutando en entorno de Integración Continua (CI). Prueba simulada exitosa.")
         return True
 
-    # Configuración para conexión real
+    # Configuración para conexión real (solo se ejecuta fuera de CI)
     DB_CONFIG = {
         'driver': '{ODBC Driver 18 for SQL Server}',
         'server': 'localhost,1433',
@@ -54,9 +54,5 @@ def test_connection_mac():
         return False
 
 if __name__ == "__main__":
-<<<<<<< HEAD
-    test_connection_mac()
-=======
     success = test_connection_mac()
     sys.exit(0 if success else 1)
->>>>>>> fc3820bd844783242e5c50b9fca3e3414ec0176a
