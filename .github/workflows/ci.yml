@@ -1,0 +1,25 @@
+name: CI JobNest
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Verificar archivos
+        run: ls
+
+      - name: Ejecutar prueba de conexión
+        run: python test_connection.py
