@@ -1,4 +1,15 @@
-name: CI/CD JobNest
+cd ~/JobNest                     # Ir al repo
+# Crear README.md si no existe (para la explicación)
+echo "# Diferencias CD manual vs automático ..." > README.md
+# Editar el workflow para agregar deploy simulado
+nano .github/workflows/ci.yml    # Agrega el paso de echo
+# Editar test_connection.py (opcional)
+nano test_connection.py           # Agrega la detección de CI
+# Agregar, commit y push
+git add .
+git commit -m "Completar desafío extra: deploy simulado y documentación"
+git push origin main
+# Cuando pida usuario y contraseña, usa: usuario = RafaelBB26, contraseña = TU_TOKENname: CI/CD JobNest
 
 on:
   push:
